@@ -615,6 +615,10 @@ main (int argc, char *argv[])
                 perf, outMediaType);
         }
 
+        /* print the gstreamer pipeline command to see what is actually happening */
+        std::cout << pip << std::endl;
+        return 0;
+        
         gst_rtsp_media_factory_set_launch (factory, pip);
         gst_rtsp_media_factory_set_shared (factory, TRUE);
         gst_rtsp_mount_points_add_factory (mounts, "/test", factory);
@@ -665,6 +669,10 @@ main (int argc, char *argv[])
                     ! queue %s ! kmssink driver-name=xlnx plane-id=39 sync=%s fullscreen-overlay=true", perf, filename? "true" : "false");
         }
 
+        /* print the gstreamer pipeline command to see what is actually happening */
+        std::cout << pip << std::endl;
+        return 0;
+        
         GstElement *pipeline = gst_parse_launch(pip, NULL);
         gst_element_set_state (pipeline, GST_STATE_PLAYING);
         /* Wait until error or EOS */
