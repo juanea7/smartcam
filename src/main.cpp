@@ -25,6 +25,7 @@
 #include <stdexcept>
 #include <unistd.h>
 #include <sys/types.h>
+#include <iostream>
 
 #define DEFAULT_RTSP_PORT "554"
 
